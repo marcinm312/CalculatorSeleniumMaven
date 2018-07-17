@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="18973" started-at="2018-07-17T19:12:55Z" finished-at="2018-07-17T19:13:14Z">
+  <suite name="Default suite" duration-ms="16700" started-at="2018-07-17T19:52:29Z" finished-at="2018-07-17T19:52:46Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="18973" started-at="2018-07-17T19:12:55Z" finished-at="2018-07-17T19:13:14Z">
+    <test name="Default test" duration-ms="16700" started-at="2018-07-17T19:52:29Z" finished-at="2018-07-17T19:52:46Z">
       <class name="tests.CalculatorTest">
-        <test-method status="PASS" signature="start()[pri:0, instance:tests.CalculatorTest@548a9f61]" name="start" is-config="true" duration-ms="11" started-at="2018-07-17T21:12:55Z" finished-at="2018-07-17T21:12:55Z">
+        <test-method status="PASS" signature="start()[pri:0, instance:tests.CalculatorTest@548a9f61]" name="start" is-config="true" duration-ms="21" started-at="2018-07-17T21:52:29Z" finished-at="2018-07-17T21:52:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- start -->
-        <test-method status="PASS" signature="mainTest()[pri:0, instance:tests.CalculatorTest@548a9f61]" name="mainTest" duration-ms="17977" started-at="2018-07-17T21:12:55Z" finished-at="2018-07-17T21:13:13Z">
+        <test-method status="PASS" signature="mainTest()[pri:0, instance:tests.CalculatorTest@548a9f61]" name="mainTest" duration-ms="15777" started-at="2018-07-17T21:52:29Z" finished-at="2018-07-17T21:52:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- mainTest -->
-        <test-method status="PASS" signature="finishTest(org.testng.ITestResult)[pri:0, instance:tests.CalculatorTest@548a9f61]" name="finishTest" is-config="true" duration-ms="934" started-at="2018-07-17T21:13:13Z" finished-at="2018-07-17T21:13:14Z">
+        <test-method status="PASS" signature="finishTest(org.testng.ITestResult)[pri:0, instance:tests.CalculatorTest@548a9f61]" name="finishTest" is-config="true" duration-ms="847" started-at="2018-07-17T21:52:45Z" finished-at="2018-07-17T21:52:46Z">
           <params>
             <param index="0">
               <value>
