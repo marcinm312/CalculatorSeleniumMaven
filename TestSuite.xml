@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite configfailurepolicy="continue" name="Default suite" >
+    <test verbose="0" name="Default test" parallel = "methods" thread-count="1">
+        <classes>
+            <class name="tests.CalculatorTest"/>
+        </classes>
+    </test>
+</suite>
