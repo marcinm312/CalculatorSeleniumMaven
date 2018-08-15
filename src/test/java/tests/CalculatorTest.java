@@ -17,30 +17,30 @@ public class CalculatorTest {
 	private void start() {
 		calculatorPage = new CalculatorPage();
 	}
-	
+
 	@AfterMethod
 	private void finishTest(ITestResult result) throws IOException {
-		if(!result.isSuccess()) {
+		if (!result.isSuccess()) {
 			String methodName = result.getName().toString().trim();
 			calculatorPage.takeScreenshot(methodName);
 		}
 		calculatorPage.closeBrowser();
 	}
-	
+
 	@Test
 	public static void mainTest() throws InterruptedException {
-		step1();		
+		step1();
 		step2();
 		step3();
 		step4();
 		step5();
 	}
-	
+
 	private static void step5() throws InterruptedException {
 		calculatorPage.clickHistoryButton();
 		ensureCalculationsAreListed();
 	}
-	
+
 	private static void step4() throws InterruptedException {
 		calculatorPage.setDegree();
 		calculatorPage.clickSqrtButton();
@@ -58,7 +58,7 @@ public class CalculatorTest {
 		checkCalculatorResult("-1");
 		calculatorPage.clickClearButton();
 	}
-	
+
 	private static void step2() throws InterruptedException {
 		calculatorPage.setDegree();
 		calculatorPage.fillCalculatorField("35");
@@ -80,11 +80,11 @@ public class CalculatorTest {
 		calculatorPage.openPage();
 		calculatorPage.clickAcceptCookiesButton();
 	}
-	
-	private static void checkCalculatorResult (String expectedResult) {
+
+	private static void checkCalculatorResult(String expectedResult) {
 		Assert.assertEquals(calculatorPage.getTextFromCalculatorField(), expectedResult);
 	}
-	
+
 	private static void ensureCalculationsAreListed() {
 		Assert.assertEquals(calculatorPage.getCellFromCalculationsHistory(3, 2), "35*999+(100/4)");
 		Assert.assertEquals(calculatorPage.getCellFromCalculationsHistory(3, 1), "= 34990");
