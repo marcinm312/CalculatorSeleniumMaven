@@ -28,7 +28,7 @@ public class CalculatorPage {
 	public void fillCalculatorField(String text) {
 		driver.findElement(By.id("input")).sendKeys(text);
 	}
-	
+
 	public String getTextFromCalculatorField() {
 		return driver.findElement(By.id("input")).getAttribute("value");
 	}
@@ -37,35 +37,35 @@ public class CalculatorPage {
 		driver.findElement(By.id("BtnCalc")).click();
 		Thread.sleep(1000);
 	}
-	
+
 	public void clickPlusButton() {
 		driver.findElement(By.id("BtnPlus")).click();
 	}
-	
+
 	public void clickMultiplyButton() {
 		driver.findElement(By.id("BtnMult")).click();
 	}
-	
+
 	public void clickDivideButton() {
 		driver.findElement(By.id("BtnDiv")).click();
 	}
-	
+
 	public void clickOpenBracketButton() {
 		driver.findElement(By.id("BtnParanL")).click();
 	}
-	
+
 	public void clickCloseBracketButton() {
 		driver.findElement(By.id("BtnParanR")).click();
 	}
-	
+
 	public void clickCosButton() {
 		driver.findElement(By.id("BtnCos")).click();
 	}
-	
+
 	public void clickSqrtButton() {
 		driver.findElement(By.id("BtnSqrt")).click();
 	}
-	
+
 	public void clickClearButton() {
 		driver.findElement(By.id("BtnClear")).click();
 	}
@@ -77,20 +77,20 @@ public class CalculatorPage {
 	public void setRadian() {
 		driver.findElement(By.id("trigorad")).click();
 	}
-	
+
 	public void clickHistoryButton() throws InterruptedException {
 		driver.findElement(By.xpath("//*[@id=\"hist\"]/button[2]")).click();
 		Thread.sleep(1000);
 	}
-	
+
 	public String getCellFromCalculationsHistory(int w, int k) {
-		return driver.findElement(By.xpath("//*[@id=\"histframe\"]/ul/li[" + w + "]/p[" + k +"]")).getText();
+		return driver.findElement(By.xpath("//*[@id=\"histframe\"]/ul/li[" + w + "]/p[" + k + "]")).getText();
 	}
 
 	public void closeBrowser() {
 		driver.quit();
 	}
-	
+
 	public void takeScreenshot(String methodName) throws IOException {
 		Date date = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
@@ -98,14 +98,15 @@ public class CalculatorPage {
 		try {
 			File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(scrFile, new File("screenshots\\" + fileName + ".png"));
-			System.out.println("Test zakoñczony niepowodzeniem. Utworzono zrzut ekranu: " + fileName);
+			System.out.println("Test zakoï¿½czony niepowodzeniem. Utworzono zrzut ekranu: " + fileName);
 		} catch (IOException e) {
-			System.out.println("B³¹d podczas tworzenia zrzutu");
+			System.out.println("Bï¿½ï¿½d podczas tworzenia zrzutu");
 			throw e;
 		}
 	}
 
 	public void clickAcceptCookiesButton() {
-		driver.findElement(By.name("cookies")).click();
+		// driver.findElement(By.name("cookies")).click();
+		driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/div/button")).click();
 	}
 }
