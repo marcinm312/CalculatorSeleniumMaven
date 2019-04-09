@@ -98,15 +98,16 @@ public class CalculatorPage {
 		try {
 			File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(scrFile, new File("screenshots\\" + fileName + ".png"));
-			System.out.println("Test zako�czony niepowodzeniem. Utworzono zrzut ekranu: " + fileName);
+			System.out.println("Test zakonczony niepowodzeniem. Utworzono zrzut ekranu: " + fileName);
 		} catch (IOException e) {
-			System.out.println("B��d podczas tworzenia zrzutu");
+			System.out.println("Blad podczas tworzenia zrzutu");
 			throw e;
 		}
 	}
 
 	public void clickAcceptCookiesButton() {
 		// driver.findElement(By.name("cookies")).click();
-		driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/div/button")).click();
+		// driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/div/button")).click();
+		driver.findElement(By.id("cookiesaccept")).click();
 	}
 }
