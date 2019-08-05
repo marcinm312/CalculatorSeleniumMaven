@@ -29,10 +29,15 @@ public class CalculatorTest {
 
 	@Test
 	public static void mainTest() throws InterruptedException {
+		System.out.println("Step 1...");
 		step1();
+		System.out.println("Step 2...");
 		step2();
+		System.out.println("Step 3...");
 		step3();
+		System.out.println("Step 4...");
 		step4();
+		System.out.println("Step 5...");
 		step5();
 	}
 
