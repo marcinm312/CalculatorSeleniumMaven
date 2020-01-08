@@ -108,6 +108,7 @@ public class CalculatorPage {
 	public void clickAcceptCookiesButton() {
 		// driver.findElement(By.name("cookies")).click();
 		// driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/div/button")).click();
-		driver.findElement(By.id("cookiesaccept")).click();
+		//driver.findElement(By.id("cookiesaccept")).click();
+		driver.findElement(By.id("cookieconsentallowall")).click();
 	}
 }
