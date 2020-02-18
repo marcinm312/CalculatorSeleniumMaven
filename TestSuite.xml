@@ -3,7 +3,7 @@
 <suite configfailurepolicy="continue" name="Default suite" >
     <test verbose="0" name="Default test" parallel = "methods" thread-count="1">
         <classes>
-            <class name="tests.CalculatorTest"/>
+            <class name="test.CalculatorTest"/>
         </classes>
     </test>
 </suite>
