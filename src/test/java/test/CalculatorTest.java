@@ -66,6 +66,7 @@ public class CalculatorTest {
 
     private static void step2() throws InterruptedException {
         calculatorPage.setDegree();
+        calculatorPage.clickDeclineAdvertisementsAndTrackingButton();
         calculatorPage.fillCalculatorField("35");
         calculatorPage.clickMultiplyButton();
         calculatorPage.fillCalculatorField("999");
@@ -83,7 +84,7 @@ public class CalculatorTest {
     private static void step1() {
         calculatorPage.setUp();
         calculatorPage.openPage();
-        calculatorPage.clickAcceptCookiesButton();
+        // calculatorPage.clickAcceptCookiesButton();
     }
 
     private static void checkCalculatorResult(String expectedResult) {

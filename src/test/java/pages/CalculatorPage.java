@@ -22,7 +22,7 @@ public class CalculatorPage {
     }
 
     public void openPage() {
-        driver.get("http://web2.0calc.com/");
+        driver.get("https://web2.0calc.com/");
     }
 
     public void fillCalculatorField(String text) {
@@ -106,5 +106,9 @@ public class CalculatorPage {
         // driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/form/div/button")).click();
         //driver.findElement(By.id("cookiesaccept")).click();
         driver.findElement(By.id("cookieconsentallowall")).click();
+    }
+
+    public void clickDeclineAdvertisementsAndTrackingButton() {
+        driver.findElement(By.xpath("//*[@id=\"cookieconsentmodal\"]/div/div/div/div[1]/div[1]/form/div/div[2]/button")).click();
     }
 }
