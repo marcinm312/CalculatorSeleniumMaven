@@ -108,7 +108,9 @@ public class CalculatorPage {
         driver.findElement(By.id("cookieconsentallowall")).click();
     }
 
-    public void clickDeclineAdvertisementsAndTrackingButton() {
+    public void clickDeclineAdvertisementsAndTrackingButton() throws InterruptedException {
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//*[@id=\"cookieconsentmodal\"]/div/div/div/div[1]/div[1]/form/div/div[2]/button")).click();
+        Thread.sleep(1000);
     }
 }
