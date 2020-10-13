@@ -54,6 +54,7 @@
                     <systemPropertyVariables>
                         <testng.dtd.http>true</testng.dtd.http>
                     </systemPropertyVariables>
+                    <argLine>-Dfile.encoding=${project.build.sourceEncoding}</argLine>
                 </configuration>
             </plugin>
 
