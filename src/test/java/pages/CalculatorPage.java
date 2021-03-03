@@ -34,6 +34,7 @@ public class CalculatorPage {
 	}
 
 	public void clickEqualsButton() throws InterruptedException {
+		Thread.sleep(2000);
 		driver.findElement(By.id("BtnCalc")).click();
 		Thread.sleep(2000);
 	}
@@ -103,7 +104,7 @@ public class CalculatorPage {
 
 	public void clickAcceptCookiesButton() throws InterruptedException {
 		Thread.sleep(2000);
-		driver.findElement(By.cssSelector("button.sc-ifAKCX:nth-child(3)")).click();
+		driver.findElement(By.xpath ("//*[contains(text(),'AGREE')]")).click();
 		Thread.sleep(2000);
 	}
 }
