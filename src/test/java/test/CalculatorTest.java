@@ -65,8 +65,8 @@ public class CalculatorTest {
 	}
 
 	private static void step2() throws InterruptedException {
-		calculatorPage.setDegree();
 		calculatorPage.clickAcceptCookiesButton();
+		calculatorPage.setDegree();
 		calculatorPage.fillCalculatorField("35");
 		calculatorPage.clickMultiplyButton();
 		calculatorPage.fillCalculatorField("999");
