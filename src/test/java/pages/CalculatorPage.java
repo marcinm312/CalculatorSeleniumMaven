@@ -104,7 +104,7 @@ public class CalculatorPage {
 
 	public void clickAcceptCookiesButton() throws InterruptedException {
 		Thread.sleep(2000);
-		driver.findElement(By.xpath ("//*[contains(text(),'AGREE')]")).click();
+		driver.findElement(By.xpath ("//*[contains(text(),'Consent')]")).click();
 		Thread.sleep(2000);
 	}
 }
