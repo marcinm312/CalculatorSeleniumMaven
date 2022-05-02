@@ -41,7 +41,7 @@ public class CalculatorTest {
 		step5();
 	}
 
-	private static void step5() throws InterruptedException {
+	private static void step5() {
 		calculatorPage.clickHistoryButton();
 		ensureCalculationsAreListed();
 	}
@@ -68,7 +68,6 @@ public class CalculatorTest {
 		calculatorPage.clickAcceptCookiesButton();
 		calculatorPage.setDegree();
 		calculatorPage.fillCalculatorField("35");
-		//calculatorPage.clickAcceptCookiesButton();
 		calculatorPage.clickMultiplyButton();
 		calculatorPage.fillCalculatorField("999");
 		calculatorPage.clickPlusButton();

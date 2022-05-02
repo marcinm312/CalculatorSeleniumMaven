@@ -3,22 +3,27 @@ package pages;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CalculatorPage {
-	public WebDriver driver;
+
+	private WebDriver driver;
+	private WebDriverWait wait;
+
 
 	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
+
+		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	}
 
 	public void openPage() {
@@ -34,9 +39,10 @@ public class CalculatorPage {
 	}
 
 	public void clickEqualsButton() throws InterruptedException {
-		Thread.sleep(2000);
-		driver.findElement(By.id("BtnCalc")).click();
-		Thread.sleep(2000);
+		WebElement equalsButton = driver.findElement(By.id("BtnCalc"));
+		wait.until(ExpectedConditions.elementToBeClickable(equalsButton));
+		equalsButton.click();
+		Thread.sleep(1000);
 	}
 
 	public void clickPlusButton() {
@@ -75,9 +81,9 @@ public class CalculatorPage {
 		driver.findElement(By.id("trigorad")).click();
 	}
 
-	public void clickHistoryButton() throws InterruptedException {
+	public void clickHistoryButton() {
 		driver.findElement(By.xpath("//*[@id=\"hist\"]/button[2]")).click();
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"histframe\"]/ul")));
 	}
 
 	public String getCellFromCalculationsHistory(int w, int k) {
@@ -95,16 +101,19 @@ public class CalculatorPage {
 		try {
 			File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(scrFile, new File("screenshots\\" + fileName + ".png"));
-			System.out.println("Test zakonczony niepowodzeniem. Utworzono zrzut ekranu: " + fileName);
+			System.out.println("Test zakończony niepowodzeniem. Utworzono zrzut ekranu: " + fileName);
 		} catch (IOException e) {
-			System.out.println("Blad podczas tworzenia zrzutu");
+			System.out.println("Błąd podczas tworzenia zrzutu");
 			throw e;
 		}
 	}
 
-	public void clickAcceptCookiesButton() throws InterruptedException {
-		Thread.sleep(2000);
-		driver.findElement(By.xpath ("//*[contains(text(),'Consent')]")).click();
-		Thread.sleep(2000);
+	public void clickAcceptCookiesButton() {
+		WebElement acceptCookiesButton = driver.findElement(By.xpath ("//*[contains(text(),'Consent')]"));
+		wait.until(ExpectedConditions.elementToBeClickable(acceptCookiesButton));
+		acceptCookiesButton.click();
+
+		WebElement degreeButton = driver.findElement(By.id("trigodeg"));
+		wait.until(ExpectedConditions.elementToBeClickable(degreeButton));
 	}
 }
