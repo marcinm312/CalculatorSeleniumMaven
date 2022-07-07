@@ -112,9 +112,9 @@ public class CalculatorPage {
 		try {
 			File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(scrFile, new File("screenshots\\" + fileName + ".png"));
-			System.out.println("Test zakończony niepowodzeniem. Utworzono zrzut ekranu: " + fileName);
+			System.err.println("Test zakończony niepowodzeniem. Utworzono zrzut ekranu: " + fileName);
 		} catch (IOException e) {
-			System.out.println("Błąd podczas tworzenia zrzutu");
+			System.err.println("Błąd podczas tworzenia zrzutu ekranu");
 			throw e;
 		}
 	}
