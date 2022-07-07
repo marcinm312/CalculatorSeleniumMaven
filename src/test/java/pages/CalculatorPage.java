@@ -2,6 +2,7 @@ package pages;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.FileSystems;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
@@ -16,10 +17,19 @@ public class CalculatorPage {
 
 	private WebDriver driver;
 	private WebDriverWait wait;
+	private final String fileSeparator = FileSystems.getDefault().getSeparator();
 
 
 	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+		String os = System.getProperty("os.name").toLowerCase();
+		System.out.println("Used OS: " + os);
+		if (os.startsWith("windows")) {
+			System.setProperty("webdriver.chrome.driver", "drivers" + fileSeparator + "windows" + fileSeparator + "chromedriver.exe");
+		} else if (os.startsWith("linux")) {
+			System.setProperty("webdriver.chrome.driver", "drivers" + fileSeparator + "linux" + fileSeparator + "chromedriver");
+		} else {
+			System.exit(-1);
+		}
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 
