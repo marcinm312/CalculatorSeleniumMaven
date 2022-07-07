@@ -28,6 +28,7 @@ public class CalculatorPage {
 		} else if (os.startsWith("linux")) {
 			System.setProperty("webdriver.chrome.driver", "drivers" + fileSeparator + "linux" + fileSeparator + "chromedriver");
 		} else {
+			System.out.println("Unsupported OS!");
 			System.exit(-1);
 		}
 		driver = new ChromeDriver();
