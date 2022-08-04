@@ -85,7 +85,10 @@ public class CalculatorPage {
 	}
 
 	public void setDegree() {
-		driver.findElement(By.id("trigodeg")).click();
+		WebElement degreeButton = driver.findElement(By.id("trigodeg"));
+		wait.until(ExpectedConditions.elementToBeClickable(degreeButton));
+
+		degreeButton.click();
 	}
 
 	public void setRadian() {
@@ -120,11 +123,12 @@ public class CalculatorPage {
 	}
 
 	public void clickAcceptCookiesButton() {
+		WebElement acceptManagementPlatformButton = driver.findElement(By.xpath ("(//*[contains(text(),'Consent')])[last()]"));
+		wait.until(ExpectedConditions.elementToBeClickable(acceptManagementPlatformButton));
+		acceptManagementPlatformButton.click();
+
 		WebElement acceptCookiesButton = driver.findElement(By.xpath ("//*[contains(text(),'Consent')]"));
 		wait.until(ExpectedConditions.elementToBeClickable(acceptCookiesButton));
 		acceptCookiesButton.click();
-
-		WebElement degreeButton = driver.findElement(By.id("trigodeg"));
-		wait.until(ExpectedConditions.elementToBeClickable(degreeButton));
 	}
 }
