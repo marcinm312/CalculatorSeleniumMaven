@@ -13,3 +13,17 @@
 
 ## Obsługiwane przeglądarki:
 1. Chrome (zgodnie z numerem wersji Chromedriver'a zawartego w tytule commit'a)
+
+## Użyte technologie i narzędzia:
+1. Java
+2. Maven
+3. Selenium
+4. TestNG
+5. Chromedriver
+6. Apache Commons IO (wykonywanie zrzutu ekranu w przypadku niepowodzenia testu)
+
+## Jak uruchomić:
+
+Z głównego folderu projektu, wywołać w konsoli polecenie:
+
+`mvn clean test -Dsurefire.suiteXmlFiles=TestSuite.xml`
