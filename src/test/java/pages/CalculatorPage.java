@@ -126,12 +126,13 @@ public class CalculatorPage {
 	}
 
 	public void clickAcceptCookiesButton() {
-		WebElement acceptManagementPlatformButton = driver.findElement(By.xpath ("(//*[contains(text(),'Consent')])[last()]"));
+		WebElement acceptManagementPlatformButton = driver.findElement
+				(By.xpath ("(//*[contains(text(),'Do not consent')])[last()]"));
 		wait.until(ExpectedConditions.elementToBeClickable(acceptManagementPlatformButton));
 		acceptManagementPlatformButton.click();
 
-		WebElement acceptCookiesButton = driver.findElement(By.xpath ("//*[contains(text(),'Consent')]"));
+		/*WebElement acceptCookiesButton = driver.findElement(By.xpath ("//*[contains(text(),'Consent')]"));
 		wait.until(ExpectedConditions.elementToBeClickable(acceptCookiesButton));
-		acceptCookiesButton.click();
+		acceptCookiesButton.click();*/
 	}
 }
