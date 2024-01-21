@@ -2,6 +2,7 @@ package test;
 
 import java.io.IOException;
 
+import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -11,7 +12,9 @@ import org.testng.annotations.Test;
 import pages.CalculatorPage;
 
 public class CalculatorTest {
+
 	private static CalculatorPage calculatorPage;
+	private final static org.slf4j.Logger log = LoggerFactory.getLogger(CalculatorTest.class);
 
 	@BeforeMethod
 	private void start() {
@@ -29,15 +32,15 @@ public class CalculatorTest {
 
 	@Test
 	public static void mainTest() throws InterruptedException {
-		System.out.println("Step 1...");
+		log.info("Step 1...");
 		step1();
-		System.out.println("Step 2...");
+		log.info("Step 2...");
 		step2();
-		System.out.println("Step 3...");
+		log.info("Step 3...");
 		step3();
-		System.out.println("Step 4...");
+		log.info("Step 4...");
 		step4();
-		System.out.println("Step 5...");
+		log.info("Step 5...");
 		step5();
 	}
 

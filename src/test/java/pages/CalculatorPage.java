@@ -13,23 +13,25 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.slf4j.LoggerFactory;
 
 public class CalculatorPage {
 
 	private WebDriver driver;
 	private WebDriverWait wait;
 	private final String fileSeparator = FileSystems.getDefault().getSeparator();
+	private final org.slf4j.Logger log = LoggerFactory.getLogger(getClass());
 
 
 	public void setUp() {
 		String os = System.getProperty("os.name").toLowerCase();
-		System.out.println("Used OS: " + os);
+		log.info("Used OS: " + os);
 		if (os.startsWith("windows")) {
 			System.setProperty("webdriver.chrome.driver", "drivers" + fileSeparator + "windows" + fileSeparator + "chromedriver.exe");
 		} else if (os.startsWith("linux")) {
 			System.setProperty("webdriver.chrome.driver", "drivers" + fileSeparator + "linux" + fileSeparator + "chromedriver");
 		} else {
-			System.err.println("Unsupported OS!");
+			log.error("Unsupported OS!");
 			System.exit(-1);
 		}
 		ChromeOptions options = new ChromeOptions();
@@ -118,9 +120,9 @@ public class CalculatorPage {
 		try {
 			File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(scrFile, new File("screenshots\\" + fileName + ".png"));
-			System.err.println("Test zakończony niepowodzeniem. Utworzono zrzut ekranu: " + fileName);
+			log.error("Test zakończony niepowodzeniem. Utworzono zrzut ekranu: " + fileName);
 		} catch (IOException e) {
-			System.err.println("Błąd podczas tworzenia zrzutu ekranu");
+			log.error("Błąd podczas tworzenia zrzutu ekranu");
 			throw e;
 		}
 	}
