@@ -12,7 +12,7 @@
 2. Linux
 
 ## Obsługiwane przeglądarki:
-1. Chrome (zgodnie z numerem wersji Chromedriver'a zawartego w tytule commit'a)
+1. Chrome
 
 ## Użyte technologie i narzędzia:
 1. Java
