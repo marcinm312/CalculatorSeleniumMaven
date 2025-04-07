@@ -43,7 +43,7 @@ public class CalculatorPage {
 	}
 
 	public String getTextFromCalculatorField() {
-		return driver.findElement(By.id("input")).getAttribute("value");
+		return driver.findElement(By.id("input")).getDomProperty("value");
 	}
 
 	public void clickEqualsButton() throws InterruptedException {

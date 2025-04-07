@@ -14,7 +14,7 @@ import pages.CalculatorPage;
 public class CalculatorTest {
 
 	private static CalculatorPage calculatorPage;
-	private final static org.slf4j.Logger log = LoggerFactory.getLogger(CalculatorTest.class);
+	private static final org.slf4j.Logger log = LoggerFactory.getLogger(CalculatorTest.class);
 
 	@BeforeMethod
 	private void start() {
