@@ -13,13 +13,8 @@ import pages.CalculatorPage;
 
 public class CalculatorTest {
 
-	private static CalculatorPage calculatorPage;
+	private static final CalculatorPage calculatorPage = new CalculatorPage();
 	private static final org.slf4j.Logger log = LoggerFactory.getLogger(CalculatorTest.class);
-
-	@BeforeMethod
-	private void start() {
-		calculatorPage = new CalculatorPage();
-	}
 
 	@AfterMethod
 	private void finishTest(ITestResult result) throws IOException {
