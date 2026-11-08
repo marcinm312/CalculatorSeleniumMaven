@@ -24,8 +24,11 @@ public class CalculatorPage {
 
 	public void setUp() {
 
-		WebDriverManager.chromedriver().clearDriverCache().clearResolutionCache();
-		WebDriverManager.chromedriver().setup();
+		WebDriverManager.chromedriver()
+				.disableTracing()
+				.clearDriverCache()
+				.clearResolutionCache()
+				.setup();
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--remote-allow-origins=*");
 		driver = new ChromeDriver(options);
