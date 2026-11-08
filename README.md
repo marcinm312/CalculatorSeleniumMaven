@@ -26,4 +26,4 @@
 
 Z głównego folderu projektu, wywołać w konsoli polecenie:
 
-`mvn clean test -Dsurefire.suiteXmlFiles=TestSuite.xml`
+`mvn clean test`
