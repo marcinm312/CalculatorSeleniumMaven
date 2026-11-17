@@ -91,6 +91,12 @@ public class CalculatorPage {
 		degreeButton.click();
 	}
 
+	public void hideAdvertisement() {
+		By collapseButton = By.cssSelector(".grippy-host");
+		WebElement button = wait.until(ExpectedConditions.elementToBeClickable(collapseButton));
+		button.click();
+	}
+
 	public void setRadian() {
 		driver.findElement(By.id("trigorad")).click();
 	}

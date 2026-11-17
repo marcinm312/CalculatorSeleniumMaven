@@ -54,6 +54,7 @@ public class CalculatorTest {
 	}
 
 	private static void step3() throws InterruptedException {
+		calculatorPage.hideAdvertisement();
 		calculatorPage.setRadian();
 		calculatorPage.fillCalculatorField("cos(pi)");
 		calculatorPage.clickEqualsButton();
